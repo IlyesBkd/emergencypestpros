@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EmergencyPestPros – Fast Pest Control & Wildlife Removal</title>
+<meta name="description" content="Emergency pest control and wildlife removal. Raccoons, squirrels, ants, roaches & more. Licensed experts available 24/7. Call now!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --dark:#1a1a2e;
+  --dark2:#16213e;
+  --accent:#e63946;
+  --accent-dark:#c5303c;
+  --accent-glow:rgba(230,57,70,.4);
+  --emerald:#06d6a0;
+  --emerald-dark:#05b88a;
+  --white:#ffffff;
+  --off-white:#f8f9fc;
+  --light:#eef1f6;
+  --gray:#7c8498;
+  --gray-dark:#4a5068;
+  --radius:16px;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  color:var(--dark);
+  background:var(--white);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  padding-bottom:72px;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ========== STICKY HEADER ========== */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(26,26,46,.97);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 16px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.header__logo{height:44px;width:auto}
+.header__call{
+  display:flex;align-items:center;gap:7px;
+  background:var(--accent);color:var(--white);
+  font-weight:700;font-size:.88rem;letter-spacing:.3px;
+  padding:10px 20px;border-radius:50px;
+  box-shadow:0 4px 16px var(--accent-glow);
+  transition:transform .15s,background .2s;
+}
+.header__call:active{background:var(--accent-dark);transform:scale(.96)}
+.header__call svg{width:16px;height:16px;fill:var(--white);flex-shrink:0}
+
+/* ========== HERO ========== */
+.hero{
+  padding:58px 18px 22px;
+  background:var(--dark);
+  background-image:radial-gradient(ellipse at 50% 0%,rgba(230,57,70,.12) 0%,transparent 60%);
+  color:var(--white);text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(circle at 50% 80%,rgba(6,214,160,.06) 0%,transparent 50%);
+  pointer-events:none;
+}
+.hero__logo{
+  width:140px;height:auto;
+  margin:0 auto 12px;
+  filter:drop-shadow(0 4px 20px rgba(0,0,0,.4));
+}
+.hero__badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(6,214,160,.12);
+  border:1px solid rgba(6,214,160,.25);
+  border-radius:50px;padding:7px 16px;
+  font-size:.75rem;font-weight:700;margin-bottom:10px;
+  color:var(--emerald);letter-spacing:.3px;
+}
+.hero h1{
+  font-size:1.6rem;font-weight:900;line-height:1.22;
+  margin-bottom:8px;letter-spacing:-.3px;
+}
+.hero h1 .geo{color:var(--emerald)}
+.hero__sub{
+  font-size:.95rem;color:rgba(255,255,255,.65);
+  margin-bottom:12px;max-width:440px;margin-left:auto;margin-right:auto;
+  font-weight:400;
+}
+
+/* Big phone number */
+.hero__phone{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-bottom:12px;
+}
+.hero__phone a{
+  font-size:1.7rem;font-weight:900;color:var(--white);
+  letter-spacing:1px;
+  text-shadow:0 2px 20px rgba(230,57,70,.4);
+  transition:color .2s;
+}
+.hero__phone a:active{color:var(--emerald)}
+.hero__phone svg{width:28px;height:28px;fill:var(--accent);flex-shrink:0;animation:ring 1.5s ease-in-out infinite}
+@keyframes ring{
+  0%,100%{transform:rotate(0)}
+  10%{transform:rotate(14deg)}
+  20%{transform:rotate(-12deg)}
+  30%{transform:rotate(10deg)}
+  40%{transform:rotate(-6deg)}
+  50%{transform:rotate(0)}
+}
+
+/* Pulsing CTA */
+.cta-main{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--accent);color:var(--white);
+  font-size:1.1rem;font-weight:800;letter-spacing:.3px;
+  padding:16px 22px;border-radius:60px;
+  box-shadow:0 8px 32px var(--accent-glow);
+  animation:pulse 2s infinite;
+  width:100%;max-width:380px;
+  transition:transform .15s,background .2s;
+}
+.cta-main:active{background:var(--accent-dark);transform:scale(.97)}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 var(--accent-glow)}
+  70%{box-shadow:0 0 0 20px rgba(230,57,70,0)}
+  100%{box-shadow:0 0 0 0 rgba(230,57,70,0)}
+}
+
+.hero__trust{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  margin-top:14px;
+}
+.trust-tag{
+  display:flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50px;padding:7px 14px;
+  font-size:.75rem;font-weight:600;color:rgba(255,255,255,.8);
+}
+.trust-tag svg{width:15px;height:15px;flex-shrink:0}
+
+/* ========== SERVICES ========== */
+.services{padding:44px 20px;background:var(--off-white);text-align:center}
+.section-label{
+  display:inline-block;
+  font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.section-title{font-size:1.4rem;font-weight:900;margin-bottom:4px;color:var(--dark);letter-spacing:-.3px}
+.section-sub{font-size:.88rem;color:var(--gray);margin-bottom:28px;font-weight:400}
+.services__category{
+  font-size:.72rem;font-weight:700;color:var(--gray-dark);
+  text-transform:uppercase;letter-spacing:1.8px;
+  margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.services__category::before,.services__category::after{
+  content:'';height:1px;width:28px;background:rgba(0,0,0,.1);
+}
+.services__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+  max-width:400px;margin:0 auto 28px;
+}
+.service-card{
+  background:var(--white);border-radius:var(--radius);
+  padding:20px 8px 16px;
+  border:1px solid rgba(0,0,0,.04);
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  transition:transform .2s,box-shadow .2s;
+}
+.service-card:active{transform:scale(.97);box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.service-card__icon{
+  width:48px;height:48px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+.service-card__icon.wildlife{background:rgba(6,214,160,.1)}
+.service-card__icon.wildlife svg{fill:var(--emerald)}
+.service-card__icon.pest{background:rgba(230,57,70,.08)}
+.service-card__icon.pest svg{fill:var(--accent)}
+.service-card__icon svg{width:26px;height:26px}
+.service-card span{font-size:.78rem;font-weight:700;color:var(--dark)}
+
+/* ========== WHY CHOOSE US ========== */
+.why{padding:44px 20px;text-align:center}
+.why__list{
+  max-width:440px;margin:0 auto;text-align:left;
+  display:flex;flex-direction:column;gap:12px;
+}
+.why__item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--off-white);border-radius:var(--radius);
+  padding:16px 18px;
+  border:1px solid rgba(0,0,0,.04);
+}
+.why__icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--dark);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.why__icon svg{width:20px;height:20px;fill:var(--emerald)}
+.why__text h3{font-size:.9rem;font-weight:700;margin-bottom:1px;color:var(--dark)}
+.why__text p{font-size:.78rem;color:var(--gray);font-weight:400}
+
+/* ========== SECOND CTA ========== */
+.cta-section{
+  padding:44px 20px;
+  background:var(--dark);
+  background-image:radial-gradient(ellipse at 50% 100%,rgba(230,57,70,.1) 0%,transparent 60%);
+  text-align:center;color:var(--white);
+  position:relative;
+}
+.cta-section h2{font-size:1.35rem;font-weight:900;margin-bottom:8px;letter-spacing:-.3px}
+.cta-section p{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:22px;font-weight:400}
+.cta-section .cta-phone{
+  display:block;
+  font-size:1.6rem;font-weight:900;color:var(--emerald);
+  margin-bottom:18px;letter-spacing:.5px;
+}
+
+/* ========== FOOTER ========== */
+.footer{
+  padding:32px 20px;
+  background:#111122;
+  color:rgba(255,255,255,.4);
+  text-align:center;
+  font-size:.68rem;line-height:1.65;
+}
+.footer strong{color:rgba(255,255,255,.6)}
+.footer p+p{margin-top:14px}
+
+/* ========== STICKY BOTTOM BAR ========== */
+.bottom-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:1000;
+  background:var(--accent);
+  padding:0;
+  box-shadow:0 -4px 24px rgba(230,57,70,.35);
+}
+.bottom-bar a{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  color:var(--white);font-weight:800;font-size:1.05rem;
+  letter-spacing:.3px;
+  width:100%;padding:16px;
+  transition:background .2s;
+}
+.bottom-bar a:active{background:var(--accent-dark)}
+.bottom-bar svg{width:20px;height:20px;fill:var(--white);flex-shrink:0}
+
+/* ========== DESKTOP ========== */
+@media(min-width:600px){
+  .hero h1{font-size:2.4rem}
+  .hero__phone a{font-size:2.2rem}
+  .hero__logo{width:180px}
+  .services__grid{max-width:520px}
+  .cta-main{max-width:420px}
+  .cta-section .cta-phone{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ========== STICKY HEADER ========== -->
+<header class="header">
+  <a href="#"><img src="logo.png" alt="EmergencyPestPros" class="header__logo"></a>
+  <a href="tel:8000000000" class="header__call swap-target">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+    Call Now
+  </a>
+</header>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero">
+  <img src="logo.png" alt="EmergencyPestPros" class="hero__logo">
+  <div class="hero__badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" fill="#06d6a0"/><circle cx="12" cy="12" r="10" stroke="#06d6a0" stroke-width="2" opacity=".4"/></svg>
+    AVAILABLE 24/7 — EMERGENCY SERVICE
+  </div>
+  <h1>Pest or Wildlife Problem in <span class="geo" id="geo-headline">Your Area</span>?<br>We Can Help Fast!</h1>
+  <p class="hero__sub">Raccoons, Squirrels, Ants, Roaches &amp; More — Licensed Experts Standing By.</p>
+
+  <div class="hero__phone">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+    <a href="tel:8000000000" class="swap-target">(800) 000-0000</a>
+  </div>
+
+  <a href="tel:8000000000" class="cta-main swap-target">📞 CALL NOW FOR FAST REMOVAL</a>
+
+  <div class="hero__trust">
+    <div class="trust-tag">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="#06d6a0"/></svg>
+      Licensed &amp; Insured
+    </div>
+    <div class="trust-tag">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#06d6a0" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#06d6a0" stroke-width="2" stroke-linecap="round"/></svg>
+      Arrives in 60 Mins
+    </div>
+    <div class="trust-tag">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="#06d6a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="#06d6a0" stroke-width="2"/></svg>
+      Same-Day Service
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="services">
+  <div class="section-label">Our Services</div>
+  <h2 class="section-title">What We Handle</h2>
+  <p class="section-sub" id="geo-services">Serving <span class="geo-text">Your Local Area</span> &amp; Surrounding Areas</p>
+
+  <div class="services__category">Wildlife Removal</div>
+  <div class="services__grid">
+    <div class="service-card">
+      <div class="service-card__icon wildlife">
+        <svg viewBox="0 0 24 24"><path d="M21 8c0-1.5-1-2.5-2.5-2.5S16 6.5 16 8c0 .5.1 1 .4 1.4L14 12H10l-2.4-2.6c.3-.4.4-.9.4-1.4C8 6.5 7 5.5 5.5 5.5S3 6.5 3 8c0 1.2.8 2.2 1.9 2.4L3 18h18l-1.9-7.6c1.1-.2 1.9-1.2 1.9-2.4zM12 16c-1.7 0-3-1.3-3-3h6c0 1.7-1.3 3-3 3z"/></svg>
+      </div>
+      <span>Raccoons</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card__icon wildlife">
+        <svg viewBox="0 0 24 24"><path d="M12 2C9.8 2 8 3.8 8 6c0 1.1.5 2.1 1.2 2.8L7 12v4l2 2v3h2v-3l1-1 1 1v3h2v-3l2-2v-4l-2.2-3.2C15.5 8.1 16 7.1 16 6c0-2.2-1.8-4-4-4zm-1 5.5c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm2 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+      </div>
+      <span>Squirrels</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card__icon wildlife">
+        <svg viewBox="0 0 24 24"><path d="M22 7.5c0-.3-.1-.5-.2-.7L18 2l-3.8 4.8C13.5 6.3 12.8 6 12 6s-1.5.3-2.2.8L6 2 2.2 6.8C2.1 7 2 7.2 2 7.5c0 1.4.8 2.6 2 3.2V18c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7.3c1.2-.6 2-1.8 2-3.2zM10 16H8v-2h2v2zm6 0h-2v-2h2v2zm0-4H8v-2h8v2z"/></svg>
+      </div>
+      <span>Bats</span>
+    </div>
+  </div>
+
+  <div class="services__category">Pest Control</div>
+  <div class="services__grid">
+    <div class="service-card">
+      <div class="service-card__icon pest">
+        <svg viewBox="0 0 24 24"><path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-5 9l-3 3v2h16v-2l-3-3H7zm5 1c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+      </div>
+      <span>Ants</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card__icon pest">
+        <svg viewBox="0 0 24 24"><path d="M12 4C9.2 4 7 6.2 7 9c0 1.4.6 2.7 1.5 3.6L7 15v2l-3 3h4l2-2 2 2 2-2 2 2h4l-3-3v-2l-1.5-2.4C16.4 11.7 17 10.4 17 9c0-2.8-2.2-5-5-5zm-1.5 6c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm3 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+      </div>
+      <span>Spiders</span>
+    </div>
+    <div class="service-card">
+      <div class="service-card__icon pest">
+        <svg viewBox="0 0 24 24"><path d="M12 2c-2.2 0-4 1.8-4 4 0 .7.2 1.4.5 2H4v2h2l-2 6h3v4h2v-4h6v4h2v-4h3l-2-6h2V8h-4.5c.3-.6.5-1.3.5-2 0-2.2-1.8-4-4-4zm-1 5c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm2 0c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"/></svg>
+      </div>
+      <span>Roaches</span>
+    </div>
+  </div>
+
+  <a href="tel:8000000000" class="cta-main swap-target" style="margin-top:8px">📞 CALL NOW — FREE QUOTE</a>
+</section>
+
+<!-- ========== WHY CHOOSE US ========== -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <h2 class="section-title">Why Choose EmergencyPestPros?</h2>
+  <p class="section-sub" id="geo-why">#1 Rated in <span class="geo-text">Your Local Area</span></p>
+  <div class="why__list">
+    <div class="why__item">
+      <div class="why__icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z" fill="#06d6a0"/></svg>
+      </div>
+      <div class="why__text">
+        <h3>Licensed &amp; Insured</h3>
+        <p>Fully certified technicians you can trust.</p>
+      </div>
+    </div>
+    <div class="why__item">
+      <div class="why__icon">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#06d6a0" stroke-width="2"/><path d="M12 6v6l4 2" stroke="#06d6a0" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <div class="why__text">
+        <h3>Same-Day Service</h3>
+        <p>Fast response — dispatched within minutes.</p>
+      </div>
+    </div>
+    <div class="why__item">
+      <div class="why__icon">
+        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#06d6a0"/></svg>
+      </div>
+      <div class="why__text">
+        <h3>Safe for Pets &amp; Kids</h3>
+        <p>Eco-friendly treatments for your family.</p>
+      </div>
+    </div>
+    <div class="why__item">
+      <div class="why__icon">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z" fill="#06d6a0"/></svg>
+      </div>
+      <div class="why__text">
+        <h3>Satisfaction Guaranteed</h3>
+        <p>We stand behind every service call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECOND CTA ========== -->
+<section class="cta-section">
+  <div class="section-label" style="color:var(--emerald)">Act Now</div>
+  <h2>Don't Wait — Pests Multiply Fast!</h2>
+  <p>The sooner you call, the easier (and cheaper) the fix.</p>
+  <a href="tel:8000000000" class="cta-phone swap-target">(800) 000-0000</a>
+  <a href="tel:8000000000" class="cta-main swap-target">📞 TAP TO CALL A LIVE EXPERT</a>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <p>&copy; 2026 EmergencyPestPros.com &mdash; All Rights Reserved.</p>
+  <p><strong>Disclaimer:</strong> EmergencyPestPros.com is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and EmergencyPestPros.com does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on EmergencyPestPros.com.</p>
+</footer>
+
+<!-- ========== STICKY BOTTOM BAR ========== -->
+<div class="bottom-bar">
+  <a href="tel:8000000000" class="swap-target">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.24 1.01l-2.2 2.2z"/></svg>
+    TAP TO CALL — (800) 000-0000
+  </a>
+</div>
+
+<!-- ========== GEO-LOCATION SCRIPT ========== -->
+<script>
+(function(){
+  var fallback = "Your Local Area";
+
+  function updateGeo(city){
+    var label = city || fallback;
+
+    var h = document.getElementById("geo-headline");
+    if(h) h.textContent = label;
+
+    var spans = document.querySelectorAll(".geo-text");
+    for(var i = 0; i < spans.length; i++){
+      spans[i].textContent = label;
+    }
+  }
+
+  try {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://ipapi.co/json/", true);
+    xhr.timeout = 3000;
+    xhr.onload = function(){
+      if(xhr.status === 200){
+        var data = JSON.parse(xhr.responseText);
+        var city = data.city;
+        var region = data.region;
+        if(city && region){
+          updateGeo(city + ", " + region);
+        } else if(city){
+          updateGeo(city);
+        } else {
+          updateGeo(fallback);
+        }
+      } else {
+        updateGeo(fallback);
+      }
+    };
+    xhr.onerror = function(){ updateGeo(fallback); };
+    xhr.ontimeout = function(){ updateGeo(fallback); };
+    xhr.send();
+  } catch(e){
+    updateGeo(fallback);
+  }
+})();
+</script>
+
+</body>
+</html>
