@@ -15,10 +15,10 @@
 <script>
 (function (w,d,s,o,f,js,fjs) { w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; js = d.createElement(s), fjs = d.getElementsByTagName(s)[0]; js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);}(window, document, 'script', 'mcc', 'https://marketcall.com/js/mc-calltracking.js'));
 mcc('init', { site: 2866, serviceBaseUrl: '//www.marketcall.com' });
-mcc('requestTrackingNumber', {campaign:"338027",selector:[{type:"dom",value:".swap-target"}],mask:"(xxx) xxx-xx-xx",subid:"{subid}",subid1:"{keyword}",subid2:"{campaignid}",subid3:"{adgroupid}",subid4:"{gclid}"});
+mcc('requestTrackingNumber', {campaign:"338027",selector:[{type:"dom",value:"a[href^='tel:']"}],mask:"(xxx) xxx-xx-xx",subid:"{subid}",subid1:"{keyword}",subid2:"{campaignid}",subid3:"{adgroupid}",subid4:"{gclid}"});
 </script>
 <style>
-  .swap-target {
+  a[href^='tel:'] {
     visibility: hidden;
     animation: showPhone 0s 0.25s forwards;
   }
